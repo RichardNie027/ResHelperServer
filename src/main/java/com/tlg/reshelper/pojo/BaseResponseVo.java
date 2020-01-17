@@ -2,7 +2,7 @@ package com.tlg.reshelper.pojo;
 
 import java.io.Serializable;
 
-public class BaseResponseEntity implements Serializable {
+public class BaseResponseVo implements Serializable {
 
     public int code = -1;   //如需重命名，在子类重定义变量且加注释@SerializedName("error_code")
     public String msg = "";
@@ -29,6 +29,11 @@ public class BaseResponseEntity implements Serializable {
 
     public void setSuccessfulMessage(String msg) {
         this.code = 200;
+        this.msg = msg;
+    }
+
+    public void setCodeAndMessage(int code, String msg) {
+        this.code = code;
         this.msg = msg;
     }
 }

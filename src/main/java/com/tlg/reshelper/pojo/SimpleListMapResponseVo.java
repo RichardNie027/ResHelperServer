@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SimpleEntity<T> extends BaseResponseEntity {
+public class SimpleListMapResponseVo<T> extends BaseResponseVo {
 
     public List<T> resultList = new ArrayList<>();
 
