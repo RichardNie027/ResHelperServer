@@ -15,7 +15,7 @@ public class StoreHelperResTask {
 
     @Scheduled(cron = "0 0/5 9-18 ? * MON-SAT")
     public void run() throws InterruptedException {
-        businessService.loadGlobalBrandPic();
+        businessService.loadGlobalBrandPicRes();
     }
 
 }

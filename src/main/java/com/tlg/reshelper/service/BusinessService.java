@@ -12,8 +12,8 @@ public interface BusinessService {
      * @param brandKey 品牌首字母
      * @return KEY(资源类别):0品牌介绍 1本季热卖搭配 2本机流行趋势 3面料知识 其它非自然数 VALUE(文件名|时间;*.jpg|yyyyMMddHHmm)
      */
-    Map<String, String> getBrandPicNames(String brandKey);
+    Map<String, String> getBrandResNames(String brandKey);
     //List<String> getBrandPics(String brandKey, String type);
 
-    void loadGlobalBrandPic();
+    void loadGlobalBrandPicRes();
 }

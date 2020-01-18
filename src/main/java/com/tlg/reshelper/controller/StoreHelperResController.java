@@ -17,10 +17,10 @@ public class StoreHelperResController {
     @Autowired
     private BusinessService businessService;
 
-    @RequestMapping(value = "/brand/picNames/{brandKey}", method= RequestMethod.GET)
-    private SimpleMapResponseVo brandPicNames(HttpServletResponse response, @PathVariable String brandKey) {
+    @RequestMapping(value = "/brand/resNames/{brandKey}", method= RequestMethod.GET)
+    private SimpleMapResponseVo brandResNames(HttpServletResponse response, @PathVariable String brandKey) {
         SimpleMapResponseVo result = new SimpleMapResponseVo();
-        Map<String, String> map = businessService.getBrandPicNames(brandKey);
+        Map<String, String> map = businessService.getBrandResNames(brandKey);
         result.map.putAll(map);
         result.setSuccessfulMessage("OK");
         return result;
