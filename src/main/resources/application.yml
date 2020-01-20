@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev
+    active: prd
   #接口返回对象中的日期格式化
   jackson:
     time-zone: GMT+8
