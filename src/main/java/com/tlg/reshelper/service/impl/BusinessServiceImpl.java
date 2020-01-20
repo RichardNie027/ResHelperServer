@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +45,11 @@ public class BusinessServiceImpl implements BusinessService {
             if(firstTitleFileName.isPresent()) {
                 byte[] bytes = FileUtil.getFileStream(x, firstTitleFileName.get());
                 if(bytes != null && bytes.length > 0) {
-                    classMap.put("TITLE", new String(bytes).trim().replaceAll("\r\n","\\|"));
+                    try {
+                        String content = new String(bytes, "UTF-8");
+                        classMap.put("TITLE", content.trim().replaceAll("\r\n","\\|"));
+                    } catch (UnsupportedEncodingException e) {
+                    }
                 }
             }
             FileUtil.ls(x, true, false).stream().forEach(y->{   //分类（目录）
